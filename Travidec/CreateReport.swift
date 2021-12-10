@@ -62,9 +62,9 @@ class CreateReport: UIViewController {
         }
     }
     
-    @IBAction func cr_btn_submit(_ sender: UIButton) {
-        
-    }
+//    @IBAction func cr_btn_submit(_ sender: UIButton) {
+//        let val = ["nama": cr_name.text!, "subject": cr_subject.text!, "description": cr_desc]
+//    }
     
     
     /*
