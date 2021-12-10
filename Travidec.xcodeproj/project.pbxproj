@@ -10,6 +10,7 @@
 		81042F6027622F0100A26247 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81042F5F27622EFB00A26247 /* GoogleService-Info.plist */; };
 		81042F622762993A00A26247 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81042F612762993A00A26247 /* SignUpViewController.swift */; };
 		811437942763507B00F8A57F /* CreateReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811437932763507B00F8A57F /* CreateReport.swift */; };
+		8114379827637FD800F8A57F /* EditReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8114379727637FD600F8A57F /* EditReport.swift */; };
 		8157BDAE2750BD3F0010F30F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157BDAD2750BD3F0010F30F /* AppDelegate.swift */; };
 		8157BDB02750BD400010F30F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157BDAF2750BD400010F30F /* SceneDelegate.swift */; };
 		8157BDB22750BD400010F30F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157BDB12750BD400010F30F /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 		81042F5F27622EFB00A26247 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81042F612762993A00A26247 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		811437932763507B00F8A57F /* CreateReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReport.swift; sourceTree = "<group>"; };
+		8114379727637FD600F8A57F /* EditReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReport.swift; sourceTree = "<group>"; };
 		8157BDAA2750BD3F0010F30F /* Travidec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travidec.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8157BDAD2750BD3F0010F30F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8157BDAF2750BD400010F30F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				8157BDBB2750BD5D0010F30F /* Info.plist */,
 				81042F612762993A00A26247 /* SignUpViewController.swift */,
 				811437932763507B00F8A57F /* CreateReport.swift */,
+				8114379727637FD600F8A57F /* EditReport.swift */,
 			);
 			path = Travidec;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8157BDB22750BD400010F30F /* ViewController.swift in Sources */,
+				8114379827637FD800F8A57F /* EditReport.swift in Sources */,
 				811437942763507B00F8A57F /* CreateReport.swift in Sources */,
 				8157BDAE2750BD3F0010F30F /* AppDelegate.swift in Sources */,
 				81042F622762993A00A26247 /* SignUpViewController.swift in Sources */,

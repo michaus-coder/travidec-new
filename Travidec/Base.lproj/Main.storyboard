@@ -980,10 +980,10 @@
             </objects>
             <point key="canvasLocation" x="3214" y="322"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Report-->
         <scene sceneID="eVq-uS-1MB">
             <objects>
-                <viewController id="on3-uk-Yf1" sceneMemberID="viewController">
+                <viewController id="on3-uk-Yf1" customClass="EditReport" customModule="Travidec" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GjW-p7-OaH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1047,14 +1047,26 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsZ-Gz-hFL">
                                                 <rect key="frame" x="28" y="441" width="20" height="22"/>
                                                 <state key="normal" image="circle" catalog="system"/>
+                                                <state key="selected" image="circle.inset.filled" catalog="system"/>
+                                                <connections>
+                                                    <action selector="et_btn_high_action:" destination="on3-uk-Yf1" eventType="touchUpInside" id="3C4-xD-QwD"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGX-ag-y8h">
                                                 <rect key="frame" x="28" y="483" width="20" height="22"/>
                                                 <state key="normal" image="circle" catalog="system"/>
+                                                <state key="selected" image="circle.inset.filled" catalog="system"/>
+                                                <connections>
+                                                    <action selector="et_btn_medium_action:" destination="on3-uk-Yf1" eventType="touchUpInside" id="RZV-Ef-Dtt"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhc-rk-1xi">
                                                 <rect key="frame" x="28" y="525" width="20" height="22"/>
                                                 <state key="normal" image="circle" catalog="system"/>
+                                                <state key="selected" image="circle.inset.filled" catalog="system"/>
+                                                <connections>
+                                                    <action selector="et_btn_low_action:" destination="on3-uk-Yf1" eventType="touchUpInside" id="SfL-70-8BZ"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApB-db-Bt0">
                                                 <rect key="frame" x="80" y="440" width="36" height="21"/>
@@ -1214,6 +1226,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="dPp-ra-Iqz"/>
                     <size key="freeformSize" width="320" height="1000"/>
+                    <connections>
+                        <outlet property="er_btn_high" destination="qsZ-Gz-hFL" id="yb4-nu-cwK"/>
+                        <outlet property="er_btn_low" destination="Bhc-rk-1xi" id="9PV-Il-v4U"/>
+                        <outlet property="er_btn_medium" destination="rGX-ag-y8h" id="ASm-bf-yB0"/>
+                        <outlet property="er_dateTime" destination="iTv-Hf-Ilg" id="aGn-GO-BF3"/>
+                        <outlet property="er_description" destination="GS8-eV-jUy" id="UcD-EO-EaB"/>
+                        <outlet property="er_name" destination="6x5-pG-SKi" id="a4x-MY-VZl"/>
+                        <outlet property="er_subject" destination="lnN-9a-eqI" id="BK5-Mw-N7x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2g-ai-Mlh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
