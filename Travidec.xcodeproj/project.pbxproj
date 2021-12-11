@@ -19,6 +19,7 @@
 		8157BDBA2750BD5D0010F30F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8157BDB82750BD5D0010F30F /* LaunchScreen.storyboard */; };
 		8157BDC52750BD5D0010F30F /* TravidecTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157BDC42750BD5D0010F30F /* TravidecTests.swift */; };
 		8157BDD02750BD5D0010F30F /* TravidecUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157BDCF2750BD5D0010F30F /* TravidecUITests.swift */; };
+		816283242764A58A006DCD5F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816283232764A58A006DCD5F /* Home.swift */; };
 		F8B8C37668B4AE5A0F06060F /* Pods_Travidec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B77A1D6B5C315EEF993D049 /* Pods_Travidec.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		8157BDCB2750BD5D0010F30F /* TravidecUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravidecUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8157BDCF2750BD5D0010F30F /* TravidecUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravidecUITests.swift; sourceTree = "<group>"; };
 		8157BDD12750BD5D0010F30F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		816283232764A58A006DCD5F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		9B77A1D6B5C315EEF993D049 /* Pods_Travidec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travidec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F192BF9693D291E1F947F5BD /* Pods-Travidec.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travidec.release.xcconfig"; path = "Target Support Files/Pods-Travidec/Pods-Travidec.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +136,7 @@
 				81042F612762993A00A26247 /* SignUpViewController.swift */,
 				811437932763507B00F8A57F /* CreateReport.swift */,
 				8114379727637FD600F8A57F /* EditReport.swift */,
+				816283232764A58A006DCD5F /* Home.swift */,
 			);
 			path = Travidec;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				8157BDAE2750BD3F0010F30F /* AppDelegate.swift in Sources */,
 				81042F622762993A00A26247 /* SignUpViewController.swift in Sources */,
 				8157BDB02750BD400010F30F /* SceneDelegate.swift in Sources */,
+				816283242764A58A006DCD5F /* Home.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
