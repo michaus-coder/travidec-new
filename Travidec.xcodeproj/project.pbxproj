@@ -20,6 +20,8 @@
 		8157BDC52750BD5D0010F30F /* TravidecTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157BDC42750BD5D0010F30F /* TravidecTests.swift */; };
 		8157BDD02750BD5D0010F30F /* TravidecUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157BDCF2750BD5D0010F30F /* TravidecUITests.swift */; };
 		816283242764A58A006DCD5F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816283232764A58A006DCD5F /* Home.swift */; };
+		816283262765D74D006DCD5F /* isiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816283252765D74D006DCD5F /* isiCell.swift */; };
+		816283282765DE3D006DCD5F /* cellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816283272765DE3D006DCD5F /* cellClass.swift */; };
 		F8B8C37668B4AE5A0F06060F /* Pods_Travidec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B77A1D6B5C315EEF993D049 /* Pods_Travidec.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,8 @@
 		8157BDCF2750BD5D0010F30F /* TravidecUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravidecUITests.swift; sourceTree = "<group>"; };
 		8157BDD12750BD5D0010F30F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		816283232764A58A006DCD5F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		816283252765D74D006DCD5F /* isiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isiCell.swift; sourceTree = "<group>"; };
+		816283272765DE3D006DCD5F /* cellClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellClass.swift; sourceTree = "<group>"; };
 		9B77A1D6B5C315EEF993D049 /* Pods_Travidec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travidec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F192BF9693D291E1F947F5BD /* Pods-Travidec.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travidec.release.xcconfig"; path = "Target Support Files/Pods-Travidec/Pods-Travidec.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,6 +141,8 @@
 				811437932763507B00F8A57F /* CreateReport.swift */,
 				8114379727637FD600F8A57F /* EditReport.swift */,
 				816283232764A58A006DCD5F /* Home.swift */,
+				816283252765D74D006DCD5F /* isiCell.swift */,
+				816283272765DE3D006DCD5F /* cellClass.swift */,
 			);
 			path = Travidec;
 			sourceTree = "<group>";
@@ -346,7 +352,9 @@
 				8114379827637FD800F8A57F /* EditReport.swift in Sources */,
 				811437942763507B00F8A57F /* CreateReport.swift in Sources */,
 				8157BDAE2750BD3F0010F30F /* AppDelegate.swift in Sources */,
+				816283282765DE3D006DCD5F /* cellClass.swift in Sources */,
 				81042F622762993A00A26247 /* SignUpViewController.swift in Sources */,
+				816283262765D74D006DCD5F /* isiCell.swift in Sources */,
 				8157BDB02750BD400010F30F /* SceneDelegate.swift in Sources */,
 				816283242764A58A006DCD5F /* Home.swift in Sources */,
 			);

@@ -10,24 +10,39 @@ import FirebaseFirestore
 
 
 
-class Home: UIViewController {
+class Home: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     private var db = Firestore.firestore()
-
+    @IBOutlet weak var tableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+//    extension ViewController: UITableViewDelegate {
+//
+//    }
+//
+//    extension Home: UITableViewDataSource {
+//
+//    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! isiCell
+        cell.subject?.text = "Hello"
+        return cell
     }
     
     
-    
-    
-    
     func getData() {
-        db.collection("cities").getDocuments() { (querySnapshot, err) in
+        db.collection("reportData").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
