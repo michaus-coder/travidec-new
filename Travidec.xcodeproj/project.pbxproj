@@ -11,6 +11,8 @@
 		81042F622762993A00A26247 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81042F612762993A00A26247 /* SignUpViewController.swift */; };
 		811437942763507B00F8A57F /* CreateReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811437932763507B00F8A57F /* CreateReport.swift */; };
 		8114379827637FD800F8A57F /* EditReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8114379727637FD600F8A57F /* EditReport.swift */; };
+		81317CF227681A1B00A405FC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81317CF127681A1600A405FC /* ProfileViewController.swift */; };
+		81317CF427687B1F00A405FC /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81317CF327687B1F00A405FC /* EditProfileViewController.swift */; };
 		8157BDAE2750BD3F0010F30F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157BDAD2750BD3F0010F30F /* AppDelegate.swift */; };
 		8157BDB02750BD400010F30F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157BDAF2750BD400010F30F /* SceneDelegate.swift */; };
 		8157BDB22750BD400010F30F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157BDB12750BD400010F30F /* ViewController.swift */; };
@@ -22,6 +24,7 @@
 		816283242764A58A006DCD5F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816283232764A58A006DCD5F /* Home.swift */; };
 		816283262765D74D006DCD5F /* isiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816283252765D74D006DCD5F /* isiCell.swift */; };
 		816283282765DE3D006DCD5F /* cellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816283272765DE3D006DCD5F /* cellClass.swift */; };
+		8162832A2766CE06006DCD5F /* LoginControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816283292766CE06006DCD5F /* LoginControllerViewController.swift */; };
 		F8B8C37668B4AE5A0F06060F /* Pods_Travidec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B77A1D6B5C315EEF993D049 /* Pods_Travidec.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +51,8 @@
 		81042F612762993A00A26247 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		811437932763507B00F8A57F /* CreateReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReport.swift; sourceTree = "<group>"; };
 		8114379727637FD600F8A57F /* EditReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReport.swift; sourceTree = "<group>"; };
+		81317CF127681A1600A405FC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		81317CF327687B1F00A405FC /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		8157BDAA2750BD3F0010F30F /* Travidec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travidec.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8157BDAD2750BD3F0010F30F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8157BDAF2750BD400010F30F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +70,7 @@
 		816283232764A58A006DCD5F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		816283252765D74D006DCD5F /* isiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isiCell.swift; sourceTree = "<group>"; };
 		816283272765DE3D006DCD5F /* cellClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellClass.swift; sourceTree = "<group>"; };
+		816283292766CE06006DCD5F /* LoginControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginControllerViewController.swift; sourceTree = "<group>"; };
 		9B77A1D6B5C315EEF993D049 /* Pods_Travidec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travidec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F192BF9693D291E1F947F5BD /* Pods-Travidec.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travidec.release.xcconfig"; path = "Target Support Files/Pods-Travidec/Pods-Travidec.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +149,9 @@
 				816283232764A58A006DCD5F /* Home.swift */,
 				816283252765D74D006DCD5F /* isiCell.swift */,
 				816283272765DE3D006DCD5F /* cellClass.swift */,
+				816283292766CE06006DCD5F /* LoginControllerViewController.swift */,
+				81317CF127681A1600A405FC /* ProfileViewController.swift */,
+				81317CF327687B1F00A405FC /* EditProfileViewController.swift */,
 			);
 			path = Travidec;
 			sourceTree = "<group>";
@@ -354,6 +363,9 @@
 				8157BDAE2750BD3F0010F30F /* AppDelegate.swift in Sources */,
 				816283282765DE3D006DCD5F /* cellClass.swift in Sources */,
 				81042F622762993A00A26247 /* SignUpViewController.swift in Sources */,
+				81317CF227681A1B00A405FC /* ProfileViewController.swift in Sources */,
+				8162832A2766CE06006DCD5F /* LoginControllerViewController.swift in Sources */,
+				81317CF427687B1F00A405FC /* EditProfileViewController.swift in Sources */,
 				816283262765D74D006DCD5F /* isiCell.swift in Sources */,
 				8157BDB02750BD400010F30F /* SceneDelegate.swift in Sources */,
 				816283242764A58A006DCD5F /* Home.swift in Sources */,

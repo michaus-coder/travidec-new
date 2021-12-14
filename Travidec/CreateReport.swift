@@ -8,8 +8,11 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
+import MapKit
+import CoreLocationUI
+import CoreLocation
 
-class CreateReport: UIViewController {
+class CreateReport: UIViewController, CLLocationManagerDelegate {
     
     
     @IBOutlet weak var cr_name: UITextField!
@@ -21,6 +24,11 @@ class CreateReport: UIViewController {
     @IBOutlet weak var cr_btn_medium: UIButton!
     @IBOutlet weak var cr_btn_low: UIButton!
     private var db = Firestore.firestore()
+    
+    
+    @IBOutlet weak var mapView: MKMapView!
+    
+    let locationmanager = CLLocationManager()
     
     var prior = ""
     var high = "High"
@@ -37,6 +45,11 @@ class CreateReport: UIViewController {
 
         cr_dateTime.text = formattedDateInString
         
+        locationmanager.delegate = self
+        locationmanager.requestWhenInUseAuthorization()
+        locationmanager.startUpdatingLocation()
+        
+        
         if(prior == high)
         {
             prior = "High"
@@ -49,11 +62,45 @@ class CreateReport: UIViewController {
             prior = "Low"
         }
         
-        
-        // Do any additional setup after loading the view.
+
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let region = MKCoordinateRegion(center: locations[0].coordinate, span: span)
+        mapView.setRegion(region, animated: true)
+        mapView.showsUserLocation = true
+        print(span)
+        print(region)
     }
     
     
+//    private func create_btn() {
+//        if #available(iOS 15.0, *) {
+//            let button = CLLocationButton(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+//            button.label = .currentLocation
+//            button.icon = .arrowOutline
+//            button.center = view.center
+//            view.addSubview(button)
+//            button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+//        } else {
+//            // Fallback on earlier versions
+//        }
+//    }
+    
+//    @IBAction func btn_location_action(_ sender: UIButton){
+////        btn_location.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+//    }
+//
+//    @objc func didTapButton() {
+//        manager.startUpdatingLocation()
+//    }
+//
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        guard let location = locations.first else { return }
+//        self.manager.stopUpdatingLocation()
+//        print(locations)
+//    }
     
     @IBAction func btn_high_action(_ sender: UIButton) {
         if sender.isSelected {
