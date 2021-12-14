@@ -24,7 +24,7 @@ class ProfileViewController: UIViewController {
             if let document = document, document.exists {
                 DispatchQueue.main.async {
                     self.name.text = document.data()?["name"] as? String
-                    self.email.text = "Test"
+                    self.email.text = email_tmp
                     self.phone.text = document.data()?["phone"] as? String
                 }
             } else {

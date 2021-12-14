@@ -70,9 +70,21 @@ class EditProfileViewController: UIViewController {
         datePicker.datePickerMode = .date
     }
 
-//    @IBAction func submit(sender : Any){
-//
-//    }
+    @IBAction func submit(sender : Any){
+        db.collection("users").document(Auth.auth().currentUser!.uid).setData([
+            "name": self.fname.text! + " " + self.lname.text!,
+            "uid" : Auth.auth().currentUser?.uid ?? "null",
+            "birthdate" : birthdate.text!,
+            "phone" : phone.text!
+        ]){ err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+                self.performSegue(withIdentifier: "editprofileToProfile", sender: self)
+            }
+        }
+    }
 
 
     /*
