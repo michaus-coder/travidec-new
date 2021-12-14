@@ -26,7 +26,9 @@ class Home: UIViewController, UITableViewDataSource, UITableViewDelegate {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        getData()
+        get_Data()
+        
+        
     }
     
 //    extension ViewController: UITableViewDelegate {
@@ -37,14 +39,19 @@ class Home: UIViewController, UITableViewDataSource, UITableViewDelegate {
 //
 //    }
     
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return subject_arr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! isiCell
-        cell.subject?.text = "Coba"
-        return cell
+        //cell.subject?.text = "Coba"
+       cell.subject.text = subject_arr[indexPath.row]
+       cell.dateNTime.text = dateTime_arr[indexPath.row]
+       cell.status.text = stats_arr[indexPath.row]
+    return cell
     }
     
     
@@ -60,35 +67,38 @@ class Home: UIViewController, UITableViewDataSource, UITableViewDelegate {
 //        }
 //    }
     
-        func getData() {
-            db.collection("reportData").getDocuments() { snapshot, error in
-                if error == nil {
-                    if let snapshot = snapshot {
-                        snapshot.documents.map { d in
-                            return cellClass(
-                                _subject: d["subject"] as? String ?? "",
-                                _dtime: d["dateTime"] as? String ?? "",
-                                _stats: d["prioriry"] as? String ?? "")
-                        }
-                    }
-                }
-                else {
-                   //
-                }
-            }
-        }
+//        func getData() {
+//            db.collection("reportData").getDocuments() { snapshot, error in
+//                if error == nil {
+//                    if let snapshot = snapshot {
+//                        snapshot.documents.map { d in
+//                            return cellClass(
+//                                _subject: d["subject"] as? String ?? "",
+//                                _dtime: d["dateTime"] as? String ?? "",
+//                                _stats: d["prioriry"] as? String ?? "")
+//                        }
+//                    }
+//                }
+//                else {
+//                   //
+//                }
+//            }
+//        }
     
     func get_Data() {
-        let docRef = db.collection("reportData").document(Auth.auth().currentUser!.uid)
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
-//                self.name.text = document.data()?["name"] as? String
-//                self.email.text = Auth.auth().currentUser!.email
-//                self.phone.text = document.data()?["phone"] as? String
-            } else {
-                print("Document does not exist")
+        let docRef = db.collection("reportData").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+            print("Error getting documents: (err)")
+            }
+            else {
+                DispatchQueue.main.async {
+                    for document in querySnapshot!.documents {
+                    self.subject_arr.append(document.data()["name"] as! String)
+                    self.dateTime_arr.append(document.data()["dateTime"] as! String)
+                    self.stats_arr.append(document.data()["priority"] as! String)
+                    self.tableView.reloadData()
+                    }
+                }
             }
         }
     }

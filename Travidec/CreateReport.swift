@@ -20,11 +20,17 @@ class CreateReport: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var cr_desc: UITextField!
     @IBOutlet weak var cr_dateTime: UILabel!
     
+    
     @IBOutlet weak var cr_btn_high: UIButton!
     @IBOutlet weak var cr_btn_medium: UIButton!
     @IBOutlet weak var cr_btn_low: UIButton!
     private var db = Firestore.firestore()
     
+    
+    //location
+    
+    @IBOutlet weak var cr_latitude: UILabel!
+    @IBOutlet weak var cr_longitude: UILabel!
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -45,9 +51,11 @@ class CreateReport: UIViewController, CLLocationManagerDelegate {
 
         cr_dateTime.text = formattedDateInString
         
+        
         locationmanager.delegate = self
         locationmanager.requestWhenInUseAuthorization()
         locationmanager.startUpdatingLocation()
+        //print(locationmanager.startUpdatingLocation())
         
         
         if(prior == high)
@@ -70,37 +78,13 @@ class CreateReport: UIViewController, CLLocationManagerDelegate {
         let region = MKCoordinateRegion(center: locations[0].coordinate, span: span)
         mapView.setRegion(region, animated: true)
         mapView.showsUserLocation = true
-        print(span)
-        print(region)
+        cr_latitude.text = String(region.center.latitude)
+        cr_longitude.text = String(region.center.longitude)
+        //print(region.center.latitude)
+        //print(region.center.longitude)
+        
     }
     
-    
-//    private func create_btn() {
-//        if #available(iOS 15.0, *) {
-//            let button = CLLocationButton(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
-//            button.label = .currentLocation
-//            button.icon = .arrowOutline
-//            button.center = view.center
-//            view.addSubview(button)
-//            button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-//        } else {
-//            // Fallback on earlier versions
-//        }
-//    }
-    
-//    @IBAction func btn_location_action(_ sender: UIButton){
-////        btn_location.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-//    }
-//
-//    @objc func didTapButton() {
-//        manager.startUpdatingLocation()
-//    }
-//
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        guard let location = locations.first else { return }
-//        self.manager.stopUpdatingLocation()
-//        print(locations)
-//    }
     
     @IBAction func btn_high_action(_ sender: UIButton) {
         if sender.isSelected {
@@ -151,7 +135,9 @@ class CreateReport: UIViewController, CLLocationManagerDelegate {
             "dateTime": cr_dateTime.text!,
             "subject": cr_subject.text!,
             "description": cr_desc.text!,
-            "priority": prior
+            "priority": prior,
+            "locationLongitude": cr_longitude.text!,
+            "locationLatitude": cr_latitude.text!
         ]) { err in
             if let err = err {
                 print("Error writing document: \(err)")
