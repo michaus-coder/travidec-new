@@ -18,6 +18,8 @@ class Detailreportstatus: UIViewController {
     @IBOutlet weak var Deskripsi: UILabel!
     @IBOutlet weak var Priority: UILabel!
     @IBOutlet weak var Status: UILabel!
+    @IBOutlet weak var Latitude: UILabel!
+    @IBOutlet weak var Longtitude: UILabel!
     @IBAction func Update(_ sender: UIButton) {
     }
     override func viewDidLoad() {
@@ -27,7 +29,7 @@ class Detailreportstatus: UIViewController {
     }
     
     func getData() {
-        let docRef = db.document("reportData/FpB9XVSBGyvDDu6VhLgy")
+        let docRef = db.document("reportData/kABBnG94qJtAV0M8UrDA")
         docRef.getDocument { snapshot, error in
             guard let data = snapshot?.data(), error == nil else {
                 return
@@ -48,12 +50,20 @@ class Detailreportstatus: UIViewController {
             guard let sub = data["subject"] as? String else {
                 return
             }
+            guard let lat = data["locationLatitude"] as? String else {
+                return
+            }
+            guard let long = data["locationLongtitude"] as? String else {
+                return
+            }
             
             self.Informername.text = nama
             self.Tanggal.text = tanggal
             self.Deskripsi.text = desk
             self.Priority.text = prio
             self.Subject.text = sub
+            self.Latitude.text = lat
+            self.Longtitude.text = long
         }
     }
     

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0776C2E42769D802004C319D /* cellClass2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776C2E32769D802004C319D /* cellClass2.swift */; };
+		0776C2E62769D82B004C319D /* isiCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776C2E52769D82B004C319D /* isiCell2.swift */; };
 		07A01E042768ED1F00C84B6E /* Detailreportstatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A01E032768ED1F00C84B6E /* Detailreportstatus.swift */; };
 		07A01E062768ED3D00C84B6E /* Detailreport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A01E052768ED3D00C84B6E /* Detailreport.swift */; };
 		07A01E082768ED5A00C84B6E /* Dashboardviewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A01E072768ED5A00C84B6E /* Dashboardviewcontroller.swift */; };
@@ -49,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0776C2E32769D802004C319D /* cellClass2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellClass2.swift; sourceTree = "<group>"; };
+		0776C2E52769D82B004C319D /* isiCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isiCell2.swift; sourceTree = "<group>"; };
 		07A01E032768ED1F00C84B6E /* Detailreportstatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detailreportstatus.swift; sourceTree = "<group>"; };
 		07A01E052768ED3D00C84B6E /* Detailreport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detailreport.swift; sourceTree = "<group>"; };
 		07A01E072768ED5A00C84B6E /* Dashboardviewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboardviewcontroller.swift; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 				07A01E032768ED1F00C84B6E /* Detailreportstatus.swift */,
 				07A01E052768ED3D00C84B6E /* Detailreport.swift */,
 				07A01E072768ED5A00C84B6E /* Dashboardviewcontroller.swift */,
+				0776C2E32769D802004C319D /* cellClass2.swift */,
+				0776C2E52769D82B004C319D /* isiCell2.swift */,
 			);
 			path = Travidec;
 			sourceTree = "<group>";
@@ -369,8 +375,10 @@
 				8157BDB22750BD400010F30F /* ViewController.swift in Sources */,
 				07A01E082768ED5A00C84B6E /* Dashboardviewcontroller.swift in Sources */,
 				8114379827637FD800F8A57F /* EditReport.swift in Sources */,
+				0776C2E42769D802004C319D /* cellClass2.swift in Sources */,
 				811437942763507B00F8A57F /* CreateReport.swift in Sources */,
 				8157BDAE2750BD3F0010F30F /* AppDelegate.swift in Sources */,
+				0776C2E62769D82B004C319D /* isiCell2.swift in Sources */,
 				816283282765DE3D006DCD5F /* cellClass.swift in Sources */,
 				81042F622762993A00A26247 /* SignUpViewController.swift in Sources */,
 				81317CF227681A1B00A405FC /* ProfileViewController.swift in Sources */,
