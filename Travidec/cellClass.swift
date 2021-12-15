@@ -8,6 +8,7 @@
 import Foundation
 
 struct cellClass:Decodable {
+    let _id : String
     let _subject : String
     let _dtime : String
     let _stats : String

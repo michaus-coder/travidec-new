@@ -9,6 +9,7 @@ import UIKit
 
 class isiCell: UITableViewCell {
     
+    @IBOutlet weak var id: UILabel!
     @IBOutlet weak var subject: UILabel!
     @IBOutlet weak var dateNTime: UILabel!
     @IBOutlet weak var status: UILabel!

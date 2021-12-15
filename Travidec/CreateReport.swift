@@ -78,8 +78,8 @@ class CreateReport: UIViewController, CLLocationManagerDelegate {
         let region = MKCoordinateRegion(center: locations[0].coordinate, span: span)
         mapView.setRegion(region, animated: true)
         mapView.showsUserLocation = true
-        cr_latitude.text = String(region.center.latitude)
-        cr_longitude.text = String(region.center.longitude)
+        cr_latitude.text = "LA: " + String(region.center.latitude)
+        cr_longitude.text = "LO: " + String(region.center.longitude)
         //print(region.center.latitude)
         //print(region.center.longitude)
         

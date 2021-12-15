@@ -16,6 +16,7 @@ class Home: UIViewController, UITableViewDataSource, UITableViewDelegate {
     private var db = Firestore.firestore()
     @IBOutlet weak var tableView: UITableView!
     
+    var id_arr = [String]()
     var subject_arr = [String]()
     var dateTime_arr = [String]()
     var stats_arr = [String]()
@@ -30,16 +31,7 @@ class Home: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         
     }
-    
-//    extension ViewController: UITableViewDelegate {
-//
-//    }
-//
-//    extension Home: UITableViewDataSource {
-//
-//    }
-    
-    
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return subject_arr.count
@@ -48,42 +40,13 @@ class Home: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! isiCell
         //cell.subject?.text = "Coba"
+        cell.id.text = "ID : " + id_arr[indexPath.row]
        cell.subject.text = subject_arr[indexPath.row]
        cell.dateNTime.text = dateTime_arr[indexPath.row]
-       cell.status.text = stats_arr[indexPath.row]
+       cell.status.text = "Pending"
     return cell
     }
     
-    
-//    func getData() {
-//        db.collection("reportData").getDocuments() { (querySnapshot, err) in
-//            if let err = err {
-//                print("Error getting documents: \(err)")
-//            } else {
-//                for document in querySnapshot!.documents {
-//                    print("\(document.documentID) => \(document.data())")
-//                }
-//            }
-//        }
-//    }
-    
-//        func getData() {
-//            db.collection("reportData").getDocuments() { snapshot, error in
-//                if error == nil {
-//                    if let snapshot = snapshot {
-//                        snapshot.documents.map { d in
-//                            return cellClass(
-//                                _subject: d["subject"] as? String ?? "",
-//                                _dtime: d["dateTime"] as? String ?? "",
-//                                _stats: d["prioriry"] as? String ?? "")
-//                        }
-//                    }
-//                }
-//                else {
-//                   //
-//                }
-//            }
-//        }
     
     func get_Data() {
         let docRef = db.collection("reportData").getDocuments() { (querySnapshot, err) in
@@ -93,10 +56,12 @@ class Home: UIViewController, UITableViewDataSource, UITableViewDelegate {
             else {
                 DispatchQueue.main.async {
                     for document in querySnapshot!.documents {
+                    self.id_arr.append(document.documentID)
                     self.subject_arr.append(document.data()["name"] as! String)
                     self.dateTime_arr.append(document.data()["dateTime"] as! String)
-                    self.stats_arr.append(document.data()["priority"] as! String)
+                    //self.stats_arr.append(document.data()["priority"] as! String)
                     self.tableView.reloadData()
+                    
                     }
                 }
             }

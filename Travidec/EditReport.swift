@@ -40,6 +40,8 @@ class EditReport: UIViewController {
     var med = "Medium"
     var low = "Low"
     
+    var theBigPass = String()
+    
     
     
     override func viewDidLoad() {
@@ -77,6 +79,14 @@ class EditReport: UIViewController {
         }
     }
     
+    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+            if (segue.identifier == "showProductDetail") {
+                if let detailVC = segue.destinationController as? ProductDetail {
+                    let passed = (detailLabel?.label.stringValue)!
+                    detailVC.theBigPass = passed
+                }
+            }
+        }
     
     @IBAction func er_btn_submit(_ sender: UIButton) {
         
