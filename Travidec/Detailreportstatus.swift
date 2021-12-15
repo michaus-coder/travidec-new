@@ -27,9 +27,33 @@ class Detailreportstatus: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let docRef = db.collection("reportData").document("sELzEN3ZbqfCfaS8r64o")
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                DispatchQueue.main.async {
+                    let name = document.data()?["name"] as? String
+                    let tanggal = document.data()?["dateTime"] as? String
+                    let sub = document.data()?["subject"] as? String
+                    let desk = document.data()?["description"] as? String
+                    let prio = document.data()?["priority"] as? String
+                    let stat = document.data()?["status"] as? String
+                    let lat = document.data()?["locationLatitude"] as? String
+                    let long = document.data()?["locationLongitude"] as? String
+                    self.Informername.text = name
+                    self.Tanggal.text = tanggal
+                    self.Subject.text = sub
+                    self.Deskripsi.text = desk
+                    self.Priority.text = prio
+                    self.Status.text = stat
+                    self.Latitude.text = lat
+                    self.Longtitude.text = long
+                }
+            }
+        }
         // Do any additional setup after loading the view.
     }
+    
+    
     
    
     
