@@ -9,14 +9,13 @@ import UIKit
 
 class Detailreport: UIViewController {
 
+    
     @IBOutlet weak var Informeruser: UILabel!
     @IBOutlet weak var Tanggaluser: UILabel!
     @IBOutlet weak var Subjectuser: UILabel!
     @IBOutlet weak var Deskripsiuser: UILabel!
     @IBOutlet weak var Priorityuser: UILabel!
     @IBOutlet weak var Statususer: UILabel!
-    @IBOutlet weak var Locationuser: UIImageView!
-    @IBOutlet weak var Imgtambahanuser: UIImageView!
     @IBAction func Edit(_ sender: UIButton) {
     }
     override func viewDidLoad() {

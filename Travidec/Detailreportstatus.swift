@@ -6,17 +6,18 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class Detailreportstatus: UIViewController {
 
-    @IBOutlet weak var Informer: UILabel!
+    
+    @IBOutlet weak var Informername: UILabel!
     @IBOutlet weak var Tanggal: UILabel!
     @IBOutlet weak var Subject: UILabel!
     @IBOutlet weak var Deskripsi: UILabel!
     @IBOutlet weak var Priority: UILabel!
     @IBOutlet weak var Status: UILabel!
-    @IBOutlet weak var Location: UIImageView!
-    @IBOutlet weak var Imgtambahan: UIImageView!
     @IBAction func Update(_ sender: UIButton) {
     }
     override func viewDidLoad() {
@@ -25,6 +26,10 @@ class Detailreportstatus: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func getData() {
+        
+        
+    }
 
     /*
     // MARK: - Navigation
