@@ -24,6 +24,7 @@ class Detailreportstatus: UIViewController {
     @IBOutlet weak var Longtitude: UILabel!
     
     @IBAction func Update(_ sender: UIButton) {
+        db.collection("reportData").document("sELzEN3ZbqfCfaS8r64o").setData(["status":"accepted"])
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,22 @@ class Detailreportstatus: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func showAlert() {
+        let alert = UIAlertController(title: "Update Status", message: "Do you want to Update the Status?", preferredStyle: .alert)
+        
+        alert.addTextField { field in
+            field.placeholder = "Enter The Field"
+            field.returnKeyType = .continue
+            field.isSecureTextEntry = true
+        }
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel , handler: nil))
+        alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: {
+            
+        }))
+        
+        present(alert, animated: true)
+    }
     
     
    

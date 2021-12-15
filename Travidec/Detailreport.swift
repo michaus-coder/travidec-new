@@ -6,9 +6,12 @@
 //
 
 import UIKit
-
+import FirebaseAuth
+import FirebaseFirestore
+import Firebase
 class Detailreport: UIViewController {
 
+    private var db = Firestore.firestore()
     
     @IBOutlet weak var Informeruser: UILabel!
     @IBOutlet weak var Tanggaluser: UILabel!
@@ -22,8 +25,30 @@ class Detailreport: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let docRef = db.collection("reportData").document("sELzEN3ZbqfCfaS8r64o")
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                DispatchQueue.main.async {
+                    let name = document.data()?["name"] as? String
+                    let tanggal = document.data()?["dateTime"] as? String
+                    let sub = document.data()?["subject"] as? String
+                    let desk = document.data()?["description"] as? String
+                    let prio = document.data()?["priority"] as? String
+                    let stat = document.data()?["status"] as? String
+                    let lat = document.data()?["locationLatitude"] as? String
+                    let long = document.data()?["locationLongitude"] as? String
+                    self.Informeruser.text = name
+                    self.Tanggaluser.text = tanggal
+                    self.Subjectuser.text = sub
+                    self.Deskripsiuser.text = desk
+                    self.Priorityuser.text = prio
+                    self.Statususer.text = stat
+                    self.Latitudeuser.text = lat
+                    self.Longtitudeuser.text = long
+                }
+            }
+        }
     }
     
 
