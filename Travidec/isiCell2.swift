@@ -9,9 +9,12 @@ import UIKit
 
 class isiCell2: UITableViewCell {
     
-    @IBOutlet weak var informer: UILabel!
-    @IBOutlet weak var sub: UILabel!
-    @IBOutlet weak var pri: UILabel!
+    
+    
+    @IBOutlet weak var iduser: UILabel!
+    @IBOutlet weak var pridash: UILabel!
+    @IBOutlet weak var subdash: UILabel!
+    @IBOutlet weak var namadash: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

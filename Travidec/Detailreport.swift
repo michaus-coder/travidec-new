@@ -16,6 +16,8 @@ class Detailreport: UIViewController {
     @IBOutlet weak var Deskripsiuser: UILabel!
     @IBOutlet weak var Priorityuser: UILabel!
     @IBOutlet weak var Statususer: UILabel!
+    @IBOutlet weak var Latitudeuser: UILabel!
+    @IBOutlet weak var Longtitudeuser: UILabel!
     @IBAction func Edit(_ sender: UIButton) {
     }
     override func viewDidLoad() {

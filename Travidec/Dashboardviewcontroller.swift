@@ -14,22 +14,51 @@ class Dashboardviewcontroller: UIViewController, UITableViewDataSource, UITableV
     
     private var db = Firestore.firestore()
     @IBOutlet weak var tableView: UITableView!
+    
+    var id_arr = [String]()
     var informer_arr = [String]()
     var sub_arr = [String]()
     var pri_arr = [String]()
+    
+    var list = [cellClass2]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return informer_arr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: <#T##String#>, for: indexPath) as! isiCell2
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! isiCell2
+        cell.iduser.text = "ID : " + id_arr[indexPath.row]
+        cell.namadash.text = informer_arr[indexPath.row]
+        cell.subdash.text = sub_arr[indexPath.row]
+        cell.pridash.text = pri_arr[indexPath.row]
+    return cell
     }
     
-
+    func get_Data() {
+        let docRef = db.collection("reportData").getDocuments { querySnapshot, err in
+            if let err = err {
+                print("Error getting documents: (err)")
+            }
+            else {
+                DispatchQueue.main.async {
+                    for document in querySnapshot!.documents {
+                        self.id_arr.append(document.documentID)
+                        self.informer_arr.append(document.data()["name"] as! String)
+                        self.sub_arr.append(document.data()["subject"] as! String)
+                        self.pri_arr.append(document.data()["priority"] as! String)
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.delegate = self
+        tableView.dataSource = self
+        get_Data()
         // Do any additional setup after loading the view.
     }
     

@@ -8,6 +8,7 @@
 import Foundation
 
 struct cellClass2:Decodable {
+    let _id : String
     let _informer : String
     let _subject : String
     let _priority : String
