@@ -26,6 +26,7 @@ class Detailreportstatus: UIViewController {
     @IBAction func Update(_ sender: UIButton) {
         db.collection("reportData").document("sELzEN3ZbqfCfaS8r64o").setData(["status":"accepted"])
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let docRef = db.collection("reportData").document("sELzEN3ZbqfCfaS8r64o")
@@ -64,8 +65,10 @@ class Detailreportstatus: UIViewController {
         }
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel , handler: nil))
-        alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: {
-            
+        alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: { _ in
+            guard let fields = alert.textFields, fields.count == 1 else {
+                return
+            }
         }))
         
         present(alert, animated: true)
